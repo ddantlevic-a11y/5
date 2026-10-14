@@ -1,39 +1,34 @@
-// UnitTest_05_1.cpp
 #include <iostream>
-#include <cassert>
 #include <cmath>
+#include <cassert>
 
 using namespace std;
 
-// Реалізація функції f для юніт-тесту
-double f(const double a, const double b, const double c)
-{
-    return pow(sin(a * b * c), 2) / (a * a + b * b + c * c);
-}
+// Перейменовуємо main з 5.1.cpp, щоб не було конфлікту точок входу
+#define main lab_main
 
-void test_f()
-{
-    double eps = 0.00001; // Точність порівняння чисел з плаваючою крапкою
+// Прямий імпорт файлу лабораторної
+#include "5.1.cpp"
 
-    // Тест 1: якщо a = 0, sin(0) = 0 => f(0, 1, 1) = 0.0
-    assert(abs(f(0, 1, 1) - 0.0) < eps);
-    cout << "Test 1 passed!" << endl;
+// Повертаємо назву main для юніт-тесту
+#undef main
 
-    // Тест 2: якщо a=1, b=1, c=1 => f(1, 1, 1) = sin^2(1)/3
-    double expected2 = pow(sin(1.0), 2) / 3.0;
-    assert(abs(f(1, 1, 1) - expected2) < eps);
-    cout << "Test 2 passed!" << endl;
+int main() {
+    double a = 1.0;
+    double b = 1.0;
+    double c = 1.0;
 
-    // Тест 3: якщо b = 0, sin(0) = 0 => f(2, 0, 1) = 0.0
-    assert(abs(f(2, 0, 1) - 0.0) < eps);
-    cout << "Test 3 passed!" << endl;
+    // Обчислюємо очікуване значення для f(1, 1, 1) = pow(sin(1), 2) / (1 + 1 + 1)
+    double expected = pow(sin(1.0), 2) / 3.0;
+    
+    // Виклики функції f(a, b, c) з файлу 5.1.cpp
+    double actual = f(a, b, c);
 
-    cout << "\nAll Unit Tests passed successfully!" << endl;
-}
+    assert(abs(actual - expected) < 1e-5);
 
-int main()
-{
-    cout << "Running Unit Tests for Lab_05_1..." << endl;
-    test_f();
+    cout << "-------------------------" << endl;
+    cout << "UnitTest5.1 PASSED!" << endl;
+    cout << "-------------------------" << endl;
+
     return 0;
 }
