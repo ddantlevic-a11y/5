@@ -1,0 +1,15 @@
+# Build artifacts
+build/
+*/build/
+*.dSYM/
+*/*.dSYM/
+*.o
+outDebug
+
+# Executables
+lab_5_1/5.1
+lab_5_4/5.4
+lab_5_5/5.5
+
+# OS
+.DS_Store

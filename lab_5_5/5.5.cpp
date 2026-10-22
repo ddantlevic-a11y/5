@@ -67,25 +67,25 @@ int main() {
     }
 
     // 1. Двійкова система
-    int depthBin = 0;
+    int dtwo = 0;
     cout << "\n--- Двійкова система числення (base 2) ---" << endl;
-    int binRes = f1(num, 1, depthBin);
-    cout << "Результат у двійковій: " << binRes << endl;
-    cout << "depth = " << depthBin << endl;
+    int two = f1(num, 1, dtwo);
+    cout << "Результат у двійковій: " << two << endl;
+    cout << "depth = " << dtwo << endl;
 
     // 2. Вісімкова система
-    int depthOct = 0;
+    int deight = 0;
     cout << "\n--- Вісімкова система числення (base 8) ---" << endl;
-    int octRes = f2(num, 1, depthOct);
-    cout << "Результат у вісімковій: " << octRes << endl;
-    cout << "depth = " << depthOct << endl;
+    int eight = f2(num, 1, deight);
+    cout << "Результат у вісімковій: " << eight << endl;
+    cout << "depth = " << deight << endl;
 
     // 3. Система числення з основою N
-    int depthBase = 0;
+    int dBase = 0;
     cout << "\n--- Система числення з основою " << baseN << " ---" << endl;
-    int baseRes = f3(num, baseN, 1, depthBase);
+    int baseRes = f3(num, baseN, 1, dBase);
     cout << "Результат у системі з основою " << baseN << ": " << baseRes << endl;
-    cout << "depth = " << depthBase << endl;
+    cout << "depth = " << dBase << endl;
 
     return 0;
 }
